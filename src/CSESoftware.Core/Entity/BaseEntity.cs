@@ -16,7 +16,5 @@ namespace CSESoftware.Core.Entity
         public bool IsActive { get; set; } = true;
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public DateTime ModifiedDate { get; set; } = DateTime.UtcNow;
-
-        public List<BaseDomainEvent> Events = new List<BaseDomainEvent>();
     }
 }
