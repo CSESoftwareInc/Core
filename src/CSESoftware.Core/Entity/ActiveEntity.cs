@@ -1,6 +1,6 @@
 ﻿namespace CSESoftware.Core.Entity
 {
-    public abstract class BaseEntity<T> : ModifiedEntity<T>, IBaseEntity<T>
+    public abstract class ActiveEntity<T> : EntityWithId<T>, IActiveEntity<T>
     {
         public bool IsActive { get; set; } = true;
     }

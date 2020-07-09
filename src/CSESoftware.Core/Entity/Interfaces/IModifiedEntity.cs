@@ -2,15 +2,13 @@
 
 namespace CSESoftware.Core.Entity
 {
-    public interface IBaseEntity
+    public interface IModifiedEntity : IEntityWithId
     {
-        object Id { get; set; }
-        bool IsActive { get; set; }
         DateTime CreatedDate { get; set; }
         DateTime ModifiedDate { get; set; }
     }
 
-    public interface IBaseEntity<T> : IBaseEntity
+    public interface IModifiedEntity<T> : IModifiedEntity
     {
         new T Id { get; set; }
     }
