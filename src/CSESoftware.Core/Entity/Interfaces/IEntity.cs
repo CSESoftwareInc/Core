@@ -2,5 +2,7 @@
 {
     public interface IEntity
     {
+        void CreateSetup();
+        void UpdateSetup();
     }
 }

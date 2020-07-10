@@ -1,12 +1,7 @@
 ﻿namespace CSESoftware.Core.Entity
 {
-    public interface IEntityWithId : IEntity
+    public interface IEntityWithId<T> : IEntity
     {
-        object Id { get; set; }
-    }
-
-    public interface IEntityWithId<T> : IEntityWithId
-    {
-        new T Id { get; set; }
+        T Id { get; set; }
     }
 }

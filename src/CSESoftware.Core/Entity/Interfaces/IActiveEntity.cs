@@ -1,12 +1,7 @@
 ﻿namespace CSESoftware.Core.Entity
 {
-    public interface IActiveEntity : IEntityWithId
+    public interface IActiveEntity<T> : IEntityWithId<T>
     {
         bool IsActive { get; set; }
-    }
-
-    public interface IActiveEntity<T> : IActiveEntity
-    {
-        new T Id { get; set; }
     }
 }

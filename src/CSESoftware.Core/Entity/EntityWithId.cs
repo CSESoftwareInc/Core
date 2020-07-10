@@ -1,15 +1,17 @@
-﻿using System;
-using System.Globalization;
-
-namespace CSESoftware.Core.Entity
+﻿namespace CSESoftware.Core.Entity
 {
-    public abstract class EntityWithId<T> : IEntityWithId<T>
+    public abstract class EntityWithId<T> : Entity, IEntityWithId<T>
     {
         public T Id { get; set; }
-        object IEntityWithId.Id
+
+        public override void CreateSetup()
         {
-            get => Id;
-            set => Id = (T)Convert.ChangeType(value, typeof(T), new CultureInfo("en-US"));
+            base.CreateSetup();
+        }
+
+        public override void UpdateSetup()
+        {
+            base.UpdateSetup();
         }
     }
 }
