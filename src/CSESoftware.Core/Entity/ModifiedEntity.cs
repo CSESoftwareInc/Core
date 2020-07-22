@@ -2,15 +2,13 @@
 
 namespace CSESoftware.Core.Entity
 {
-    public abstract class BaseEntity<T> : EntityWithId<T>, IBaseEntity<T>
+    public abstract class ModifiedEntity<T> : EntityWithId<T>, IModifiedEntity<T>
     {
-        public bool IsActive { get; set; } = true;
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime ModifiedDate { get; set; } = DateTime.UtcNow;
 
         public override void CreateSetup()
         {
-            IsActive = true;
             CreatedDate = DateTime.UtcNow;
             ModifiedDate = DateTime.UtcNow;
             base.CreateSetup();
